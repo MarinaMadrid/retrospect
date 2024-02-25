@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700");
+
+*,/*todos los elementos*/
+*::before, /*para asegurar que los elementos generados por CSS de forma dinámica también sigan estas reglas*/
+*::after {
+  box-sizing: border-box; /* sin esta regla, el ancho y alto de un elemento se calcula sin tener en cuenta el relleno y el borde*/
+  margin: 0;  /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
+  padding: 0;
+}
+
+body, input, textarea {
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+/*HEADER*/
+header{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255,255,255,0.3)), url(images/banner.jpg);
+    background-size: cover;
+    background-position: top;
+    color: white;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 3em;
+}
+
+i{
+    color: white;
+}
+
+nav h2, nav i, .galeria img, button, .redes i{
+    cursor: pointer;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 25em;
+}
+
+.header i{
+    border: 1px solid white;
+    border-radius: 50%;
+    /*Para que tengan el mismo tamaño y el círculo*/
+    padding: 0.4em; /*Para el círculo*/
+    width: 1.8em; 
+    height: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.header h2{
+    font-size: xx-large;
+}
+
+.header p{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: larger;
+}
+
+.button-green{
+    background-color: #51BAA4;
+    border: 1px solid #51BAA4;
+    border-radius: 40px;
+    color: white;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-size: 1em;
+}
+
+.button-green:hover{
+    background-color: #64c0af;
+    border: 1px solid #64c0af;
+}
+
+/*POSTS*/
+.posts{
+    background-color: rgba(211, 211, 211, 0.548);
+    overflow: hidden;
+}
+
+.posts article{
+    background-color: white;
+    width: 75em;
+    display: flex;
+    flex-direction: row;
+    padding: 0.2em;
+    margin-bottom: 5em;
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 5em;
+}
+
+.texto h2{
+    margin-bottom: 2em;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 2em;
+    margin-left: 1.5em;
+}
+
+.texto p{
+    margin-right: 2em;
+}
+
+.posts button, .galeria button{
+    background-color: white;
+    border: 3px solid #51BAA4;
+    border-radius: 40px;
+    color: #51BAA4;
+    padding: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-size: 1em;
+    font-weight: bolder;
+    margin-top: 2em;
+}
+
+/*GALERIA*/
+.galeria{
+    padding: 3em;
+    flex: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.galeria h2, .magna h2{
+    font-size: xx-large;
+    margin-bottom: 1em;
+}
+
+.galeria p, .magna p{
+    font-size: larger;
+    margin-bottom: 4em;
+}
+
+.galeria div{
+    /*Estos tres hacen que no aparezca las líneas blancas entre las fotos*/
+    display: block;
+    line-height: 0;
+    font-size: 0;
+}
+
+.galeria button:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+/*MAGNA*/
+.magna{
+    background-image: url(images/pic11.jpg);
+    height: 30em;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white
+}
+
+.magna button{
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-size: 1.2em;
+    font-weight: bolder;
+    margin-top: 2em;
+}
+
+.magna button:hover{
+    background-color: rgba(245, 245, 245, 0.1);
+}
+
+/*FORMULARIO*/
+.formulario{
+    background-color: rgb(28, 40, 49);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 10em;
+}
+
+.formulario p{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+input, textarea{
+    border: 1px solid rgb(76, 75, 77);
+    background-color: rgb(76, 75, 77);
+    width: 41em;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+}
+
+textarea{
+    width: 84em;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+}
+
+.formulario li{
+    list-style: none;
+}
+
+/*input:focus, textarea:focus{
+    border: 1px solid #51BAA4; 
+}*/
+
+.button-reset{
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 1em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    font-size: 1em;
+    font-weight: bolder;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+hr {
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    width: 80%; /* O ajusta el ancho según tus preferencias */
+    margin: 2em auto; /* O ajusta el margen según tus preferencias */
+}
+
+.redes i{
+    color: lightgray;
+    margin-top: 2em;
+    margin-right: 2em;
+}
+
+.redes i:hover{
+    color: white;
+}
+
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 5em;
+}
+
+footer p{
+    color: lightgray;
+}
+
+footer a{
+    color:  #51BAA4;
+}
