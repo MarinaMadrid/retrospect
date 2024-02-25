@@ -1,0 +1,249 @@
+*,/*todos los elementos*/
+*::before, /*para asegurar que los elementos generados por CSS de forma dinámica también sigan estas reglas*/
+*::after {
+  box-sizing: border-box; /* sin esta regla, el ancho y alto de un elemento se calcula sin tener en cuenta el relleno y el borde*/
+  margin: 0;  /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
+  padding: 0;
+}
+
+/*COLORES----------------------------------------------------------------------*/
+header, i, button, .main__last__post, .main__formulario{
+  color: map-get($colores, white-color);
+}
+
+.main__posts p, ::placeholder{
+  color: map-get($colores, gray-color);
+}
+
+footer, footer a{
+  color: map-get($colores, lightgray-color);
+}
+
+.main__posts article, .main__posts button, .main__galeria button{
+  background-color: map-get($colores, white-color);
+}
+
+.main__formulario, footer{
+  background-color: map-get($colores, background-color);
+}
+
+
+/*FUENTES----------------------------------------------------------------------*/
+body, input, textarea{
+  font-family: $fuente;
+}
+
+/*HEADER----------------------------------------------------------------------*/
+header{
+  background-image: linear-gradient(to bottom, map-get($colores, black-header), map-get($colores, gray-header)),  $fondo-header;
+  background-size: cover;
+  background-position: top;
+}
+
+nav{
+  @include flexbox(row, space-between, center);
+  padding: 3em;
+}
+
+nav h2, nav i, .main__galeria img, button, .main__redes i{
+  cursor: pointer;
+}
+
+.header__main{
+  @include flexbox(column, center, center);
+  min-height: 25em;
+
+  i{
+    border: 1px solid map-get($colores, white-color);
+    border-radius: 50%;
+    padding: 0.4em;
+    min-width: 1.8em; 
+    min-height: 1.8em;
+    margin-bottom: 0.5em;
+  }
+
+  h2{
+    font-size: xx-large;
+  }
+  
+  p{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: larger;
+  }
+}
+
+/*MAIN------------------------------------------------------------------------*/
+main{
+  width: 100%;
+}
+
+/*SECCIÓN POSTS---------------------------------------------------------------*/
+.main__posts{
+  background-color: map-get($colores, gray-posts);
+  overflow: hidden;
+
+  article{
+    @include flexbox();
+    width: 90%;
+    padding: 0.2em;
+    margin-bottom: 5em;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 5em;
+  }
+
+  figure{
+    width: 100%;
+    min-width: 50%;
+    min-height: 20%;
+    height: auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+}
+
+.main__posts article:nth-child(2){
+  flex-direction: row-reverse;
+}
+
+.main__posts__texto{
+  @include flexbox(column, center, left);
+  line-height: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+
+  h2{
+    margin-bottom: 2em;
+  }
+  
+  p{
+    margin-right: 2em;
+  }
+}
+
+
+/*GALERIA--------------------------------------------------------------*/
+.main__galeria{
+  padding: 3em;
+  flex: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-areas:
+        "title"
+        "description"
+        "grid"
+        "button";
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h2{
+    grid-area: title;
+  }
+
+  p{
+    grid-area: description;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    grid-area: button;
+  }
+}
+
+.main__galeria h2, .main__last__post h2{
+  font-size: xx-large;
+  margin-bottom: 1em;
+}
+
+.main__galeria p, .main__last__post p{
+  font-size: larger;
+  margin-bottom: 4em;
+}
+
+.main__galeria__fotos{
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0;
+}
+
+/*ÚLTIMO POST---------------------------------------------------------------*/
+.main__last__post{
+  background-image: $fondo-last-post;
+  height: 30em;
+  background-size: cover;
+  @include flexbox(column, center, center);
+  text-align: center;
+}
+
+/*FORMULARIO------------------------------------------------------------------*/
+.main__formulario{
+  background-color: map-get($colores, background-form);
+  @include flexbox(column, center, center);
+  text-align: center;
+  padding: 10em;
+
+  p{
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  li{
+    list-style: none;
+  }
+  
+  hr{
+    border: 0.5px solid map-get($colores, gray-hr);
+    min-width: 85%; 
+    margin: 2em auto;
+  }
+}
+
+input, textarea{
+  border: 1px solid map-get($colores, input-form);
+  background-color: map-get($colores, input-form);
+  min-width: 41em;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
+
+textarea{
+  min-width: 84em;
+}
+
+.main__formulario__data{
+  @include flexbox();
+}
+
+/*REDES-----------------------------------------------------------------------*/
+.main__redes i{
+  color: map-get($colores, lightgray-color);
+  margin-top: 2em;
+  margin-right: 2em;
+
+  &:hover{
+    color: map-get($colores, white-color);
+  }
+}
+
+/*FOOTER----------------------------------------------------------------------*/
+footer{
+  @include flexbox(row, center, center);
+  text-align: center;
+  min-height: 5em;
+
+  p{
+    color: map-get($colores, lightgray-color);
+  }
+
+  a{
+    color: map-get($colores, green-color);
+  }
+}

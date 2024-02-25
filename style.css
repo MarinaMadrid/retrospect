@@ -1,280 +1,364 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,700");
+/*BOTONES----------------------------------------------------------------------*/
+button {
+  border-radius: 40px;
+}
 
-*,/*todos los elementos*/
-*::before, /*para asegurar que los elementos generados por CSS de forma dinámica también sigan estas reglas*/
+.button__green {
+  background-color: #51BAA4;
+  border: 1px solid #51BAA4;
+  padding: 1em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  font-size: 1em;
+}
+
+.main__posts button, .main__galeria button {
+  border: 2px solid #51BAA4;
+  border-radius: 40px;
+  color: #51BAA4;
+  padding: 0.5em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  font-size: 1em;
+  font-weight: bolder;
+  margin-top: 2em;
+}
+
+.main__posts button {
+  min-width: 10em;
+}
+
+.button__white {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 1.5em;
+  font-size: 1em;
+  font-weight: bolder;
+  margin-top: 2em;
+}
+.button__white:hover {
+  background-color: rgba(245, 245, 245, 0.1);
+}
+
+.button__reset {
+  background-color: transparent;
+  border: 3px solid white;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: bolder;
+  margin-top: 2em;
+  margin-bottom: 8em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+
+*,
+*::before,
 *::after {
   box-sizing: border-box; /* sin esta regla, el ancho y alto de un elemento se calcula sin tener en cuenta el relleno y el borde*/
-  margin: 0;  /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
+  margin: 0; /* para garantizar que no haya márgenes o rellenos no deseados aplicados de forma predeterminada por el navegador*/
   padding: 0;
 }
 
+/*COLORES----------------------------------------------------------------------*/
+header, i, button, .main__last__post, .main__formulario {
+  color: white;
+}
+
+::-moz-placeholder {
+  color: rgba(172, 171, 171, 0.89);
+}
+
+.main__posts p, ::placeholder {
+  color: rgba(172, 171, 171, 0.89);
+}
+
+footer, footer a {
+  color: lightgray;
+}
+
+.main__posts article, .main__posts button, .main__galeria button {
+  background-color: white;
+}
+
+/*FUENTES----------------------------------------------------------------------*/
 body, input, textarea {
-    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+  font-family: "Raleway";
 }
 
-/*HEADER*/
-header{
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255,255,255,0.3)), url(images/banner.jpg);
-    background-size: cover;
-    background-position: top;
-    color: white;
+/*HEADER----------------------------------------------------------------------*/
+header {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.3)), url(images/banner.jpg);
+  background-size: cover;
+  background-position: top;
 }
 
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    padding: 3em;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
 }
 
-i{
-    color: white;
+nav h2, nav i, .main__galeria img, button, .main__redes i {
+  cursor: pointer;
 }
 
-nav h2, nav i, .galeria img, button, .redes i{
-    cursor: pointer;
+.header__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 25em;
+}
+.header__main i {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0.4em;
+  min-width: 1.8em;
+  min-height: 1.8em;
+  margin-bottom: 0.5em;
+}
+.header__main h2 {
+  font-size: xx-large;
+}
+.header__main p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: larger;
 }
 
-.header{
-    display: flex;
+/*MAIN------------------------------------------------------------------------*/
+main {
+  width: 100%;
+}
+
+/*SECCIÓN POSTS---------------------------------------------------------------*/
+.main__posts {
+  background-color: rgba(211, 211, 211, 0.548);
+  overflow: hidden;
+}
+.main__posts article {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 90%;
+  padding: 0.2em;
+  margin-bottom: 5em;
+  margin-left: 7em;
+  margin-right: 7em;
+  margin-top: 5em;
+}
+.main__posts figure {
+  width: 100%;
+  min-width: 50%;
+  min-height: 20%;
+  height: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.main__posts article:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+.main__posts__texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  line-height: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.main__posts__texto h2 {
+  margin-bottom: 2em;
+}
+.main__posts__texto p {
+  margin-right: 2em;
+}
+
+/*GALERIA--------------------------------------------------------------*/
+.main__galeria {
+  padding: 3em;
+  flex: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-areas: "title" "description" "grid" "button";
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main__galeria h2 {
+  grid-area: title;
+}
+.main__galeria p {
+  grid-area: description;
+}
+.main__galeria img {
+  width: 100%;
+  height: auto;
+}
+.main__galeria button {
+  grid-area: button;
+}
+
+.main__galeria h2, .main__last__post h2 {
+  font-size: xx-large;
+  margin-bottom: 1em;
+}
+
+.main__galeria p, .main__last__post p {
+  font-size: larger;
+  margin-bottom: 4em;
+}
+
+.main__galeria__fotos {
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0;
+}
+
+/*ÚLTIMO POST---------------------------------------------------------------*/
+.main__last__post {
+  background-image: url(images/pic11.jpg);
+  height: 30em;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*FORMULARIO------------------------------------------------------------------*/
+.main__formulario {
+  background-color: rgb(28, 40, 49);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10em;
+}
+.main__formulario p {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.main__formulario li {
+  list-style: none;
+}
+.main__formulario hr {
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  min-width: 85%;
+  margin: 2em auto;
+}
+
+input, textarea {
+  border: 1px solid rgb(76, 75, 77);
+  background-color: rgb(76, 75, 77);
+  min-width: 41em;
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
+
+textarea {
+  min-width: 84em;
+}
+
+.main__formulario__data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+/*REDES-----------------------------------------------------------------------*/
+.main__redes i {
+  color: lightgray;
+  margin-top: 2em;
+  margin-right: 2em;
+}
+.main__redes i:hover {
+  color: white;
+}
+
+/*FOOTER----------------------------------------------------------------------*/
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 5em;
+}
+footer p {
+  color: lightgray;
+}
+footer a {
+  color: #51BAA4;
+}
+
+/*MEDIA QUERIES---------------------------------------------------------------*/
+/*DESKTOP---------------------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .main__posts article, footer, .main__posts article:nth-child(2) {
     flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    height: 25em;
+  }
+  .main__posts article img {
+    margin-top: 0;
+  }
+  .formulario {
+    padding: 2em;
+  }
+  input, textarea {
+    width: 100%;
+    margin-left: 0;
+  }
+  textarea {
+    width: 100%;
+  }
 }
-
-.header i{
-    border: 1px solid white;
-    border-radius: 50%;
-    /*Para que tengan el mismo tamaño y el círculo*/
-    padding: 0.4em; /*Para el círculo*/
-    width: 1.8em; 
-    height: 1.8em;
-    margin-bottom: 0.5em;
-}
-
-.header h2{
-    font-size: xx-large;
-}
-
-.header p{
+@media screen and (max-width: 768px) {
+  .main__posts button {
+    align-self: center;
     margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: larger;
-}
-
-.button-green{
-    background-color: #51BAA4;
-    border: 1px solid #51BAA4;
-    border-radius: 40px;
-    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .fotos {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /*1 foto por fila*/
+  }
+  .formulario {
     padding: 1em;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-    font-size: 1em;
-}
-
-.button-green:hover{
-    background-color: #64c0af;
-    border: 1px solid #64c0af;
-}
-
-/*POSTS*/
-.posts{
-    background-color: rgba(211, 211, 211, 0.548);
-    overflow: hidden;
-}
-
-.posts article{
-    background-color: white;
-    width: 75em;
-    display: flex;
-    flex-direction: row;
-    padding: 0.2em;
-    margin-bottom: 5em;
-    margin-left: 6em;
-    margin-right: 6em;
-    margin-top: 5em;
-}
-
-.texto h2{
-    margin-bottom: 2em;
-}
-
-.texto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 2em;
-    margin-left: 1.5em;
-}
-
-.texto p{
-    margin-right: 2em;
-}
-
-.posts button, .galeria button{
-    background-color: white;
-    border: 3px solid #51BAA4;
-    border-radius: 40px;
-    color: #51BAA4;
-    padding: 0.5em;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-    font-size: 1em;
-    font-weight: bolder;
-    margin-top: 2em;
-}
-
-/*GALERIA*/
-.galeria{
-    padding: 3em;
-    flex: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.galeria h2, .magna h2{
-    font-size: xx-large;
-    margin-bottom: 1em;
-}
-
-.galeria p, .magna p{
-    font-size: larger;
-    margin-bottom: 4em;
-}
-
-.galeria div{
-    /*Estos tres hacen que no aparezca las líneas blancas entre las fotos*/
-    display: block;
-    line-height: 0;
-    font-size: 0;
-}
-
-.galeria button:hover{
-    background-color: rgb(240, 240, 240);
-}
-
-/*MAGNA*/
-.magna{
-    background-image: url(images/pic11.jpg);
-    height: 30em;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white
-}
-
-.magna button{
-    background-color: transparent;
-    border: 3px solid white;
-    border-radius: 40px;
-    color: white;
-    padding: 0.5em;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-    font-size: 1.2em;
-    font-weight: bolder;
-    margin-top: 2em;
-}
-
-.magna button:hover{
-    background-color: rgba(245, 245, 245, 0.1);
-}
-
-/*FORMULARIO*/
-.formulario{
-    background-color: rgb(28, 40, 49);
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 10em;
-}
-
-.formulario p{
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-input, textarea{
-    border: 1px solid rgb(76, 75, 77);
-    background-color: rgb(76, 75, 77);
-    width: 41em;
-    border-radius: 5px;
-    padding: 1em;
-    margin-bottom: 2em;
-    margin-left: 2em;
-}
-
-textarea{
-    width: 84em;
-}
-
-.data{
-    display: flex;
-    flex-direction: row;
-}
-
-.formulario li{
-    list-style: none;
-}
-
-/*input:focus, textarea:focus{
-    border: 1px solid #51BAA4; 
-}*/
-
-.button-reset{
-    background-color: transparent;
-    border: 3px solid white;
-    border-radius: 40px;
-    color: white;
-    padding: 1em;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-    font-size: 1em;
-    font-weight: bolder;
-    margin-top: 2em;
+  }
+  input, textarea {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+  footer {
+    height: 10em;
+  }
+  footer p {
     margin-bottom: 3em;
+  }
 }
-
-hr {
-    border: 0.5px solid rgba(255, 255, 255, 0.5);
-    width: 80%; /* O ajusta el ancho según tus preferencias */
-    margin: 2em auto; /* O ajusta el margen según tus preferencias */
+/*MOBILE---------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+  .fotos {
+    grid-template-columns: repeat(2, 1fr); /*2 fotos por fila*/
+  }
 }
-
-.redes i{
-    color: lightgray;
-    margin-top: 2em;
-    margin-right: 2em;
-}
-
-.redes i:hover{
-    color: white;
-}
-
-/*FOOTER*/
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 5em;
-}
-
-footer p{
-    color: lightgray;
-}
-
-footer a{
-    color:  #51BAA4;
-}
+@media screen and (min-width: 1024px) {
+  .fotos {
+    grid-template-columns: repeat(4, 1fr); /*4 fotos por fila*/
+  }
+}/*# sourceMappingURL=style.css.map */

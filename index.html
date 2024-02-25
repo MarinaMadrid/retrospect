@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Retrospect</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!--Versión 6-->
 </head>
 <body>
+    <!--HEADER-->
     <header>
         <nav>
             <h2>RETROSPECT</h2>
@@ -16,42 +17,47 @@
                 <span>Menu</span>
             </div>
         </nav>
-        <div class="header">
+        <div class="header__main">
             <i class="fas fa-gem fa-3x" aria-hidden="true"></i>
             <h2>ETIAM ADIPISCING</h2>
             <p>MAGNA FEUGIAT LOREM DOLOR EGESTAS</p>
-            <button class="button-green">LEARN MORE</button>
+            <button class="button__green">LEARN MORE</button>
         </div>
     </header>
+    <!--MAIN-->
     <main>
-        <section class="posts">
+        <!--SECCIÓN POSTS-->
+        <section class="main__posts">
             <article>
-                <img src="images/pic01.jpg" alt="">
-                <div class="texto">
+                <figure>
+                    <img src="images/pic01.jpg" alt="">
+                </figure>
+                <div class="main__posts__texto">
                     <h2>INTEGER VITAE LIBERO ACRISUS EGESTAS PLACERAT SOLLICITUDIN</h2>
                     <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
                     <button>MORE</button>
                 </div>
             </article>
             <article>
-                <div class="texto">
+                <figure>
+                    <img src="images/pic02.jpg" alt="">
+                </figure>
+                <div class="main__posts__texto">
                     <h2>INTEGER VITAE LIBERO ACRISUS EGESTAS PLACERAT SOLLICITUDIN</h2>
                     <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est.</p>
                     <button>MORE</button>
                 </div>
-                <img src="images/pic02.jpg" alt="">
             </article>
         </section>
-        <section class="galeria">
+        <!--GALERIA-->
+        <section class="main__galeria">
             <h2>ALIQUAM BLANDIT MAURIS</h2>
             <p>IPSUM DOLOR TEMPUS COMMODO TURPIS ADIPISCING TEMPOR PLACERAT SED AMET ACCUMSAN</p>
-            <div>
+            <div class="main__galeria__fotos">
                 <img src="images/pic03.jpg" alt="">
                 <img src="images/pic04.jpg" alt="">
                 <img src="images/pic05.jpg" alt="">
                 <img src="images/pic06.jpg" alt="">
-            </div>
-            <div>
                 <img src="images/pic07.jpg" alt="">
                 <img src="images/pic08.jpg" alt="">
                 <img src="images/pic09.jpg" alt="">
@@ -59,17 +65,19 @@
             </div>
             <button>TEMPUS ALIQUAM</button>
         </section>
-        <section class="magna">
+        <!--ÚLTIMO POST-->
+        <section class="main__last__post">
             <h2>MAGNA SED CONSEQUAT TEMPUS</h2>
             <p>IPSUM DOLOR TEMPUS COMMODO TURPIS ADIPISCING TEMPOR PLACERAT SED AMET ACCUMSAN</p>
-            <button>MAGNA FEUGIAT</button>
+            <button class="button__white">MAGNA FEUGIAT</button>
         </section>
-        <section class="formulario">
+        <!--FORMULARIO-->
+        <section class="main__formulario">
             <h2>GET IN TOUCH</h2>
             <p>IPSUM DOLOR TEMPUS COMMODO ADIPISCING</p>
             <form action="">
                 <ul>
-                    <div class="data">
+                    <div class="main__formulario__data">
                         <div class="name">
                             <li><input type="text" name="name" id="name" placeholder="Name"></li>
                         </div>
@@ -77,11 +85,11 @@
                     </div>
                     <li><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></li>
                 </ul>
-                <button class="button-green" type="submit">SUBMIT</button>
-                <button class="button-reset" type="reset">RESET</button>
+                <button class="button__green" type="submit">SUBMIT</button>
+                <button class="button__reset" type="reset">RESET</button>
             </form>
             <hr>
-            <div class="redes">
+            <div class="main__redes">
                 <i class="fa-brands fa-facebook fa-2x" aria-hidden="true"></i>
                 <i class="fa-brands fa-twitter fa-2x" aria-hidden="true"></i>
                 <i class="fa-brands fa-instagram fa-2x" aria-hidden="true"></i>
@@ -89,6 +97,7 @@
             </div>
         </section>
     </main>
+    <!--FOOTER-->
     <footer>
         <p>MADE WITH: <a href="http://">TEMPLATED</a></p>
     </footer>

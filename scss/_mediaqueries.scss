@@ -1,0 +1,70 @@
+/*MEDIA QUERIES---------------------------------------------------------------*/
+/*DESKTOP---------------------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+    .main__posts article, footer, .main__posts article:nth-child(2){
+      flex-direction: column;
+    }
+  
+    .main__posts article img{
+      margin-top: 0;
+    }
+  
+    .formulario {
+      padding: 2em;
+    }
+  
+    input, textarea {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    textarea {
+      width: 100%;
+    }
+}
+  
+@media screen and (max-width: 768px) {
+    .main__posts button {
+      align-self: center;
+      margin-top: 1em;
+      width: fit-content;
+    }
+  
+    .fotos {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /*1 foto por fila*/
+    }
+  
+    .formulario {
+      padding: 1em;
+    }
+  
+    input, textarea {
+      width: 100%;
+    }
+  
+    textarea {
+      width: 100%;
+    }
+  
+    footer{
+      height: 10em;
+  
+      p{
+        margin-bottom: 3em;
+      }
+    } 
+}
+  
+/*MOBILE---------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+    .fotos {
+      grid-template-columns: repeat(2, 1fr); /*2 fotos por fila*/
+    }
+}
+  
+@media screen and (min-width: 1024px) {
+    .fotos {
+      grid-template-columns: repeat(4, 1fr); /*4 fotos por fila*/
+    }
+}
+  
